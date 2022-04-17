@@ -21,7 +21,7 @@ class JankenFacingThat
       puts "you win!!"
       casePattern = "pattern1"
       
-    elsif playHand != [0,1,2,3]
+    elsif playHand != (0..3).to_a
       puts "ちゃんと選択肢から選べや"
       
     else
@@ -48,13 +48,14 @@ class JankenFacingThat
       
       if playDirection == cpuDirection
         puts "you win!!"
-      elsif playDirection != [0,1,2,3]
+      elsif playDirection != (0..3).to_a
         puts "ちゃんと選択肢から選べや"
       else
         puts "もう一回遊べるどん"
         puts "じゃんけん"
         janken
       end
+      
     when "pattern2"
       puts "あっちむいて〜..."
       puts "0(上)1(右)2(下)3(左)"
