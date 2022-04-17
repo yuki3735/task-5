@@ -21,12 +21,12 @@ class JankenFacingThat
       puts "you win!!"
       casePattern = "pattern1"
       
-    elsif playHand != (0..3).to_a
-      puts "ちゃんと選択肢から選べや"
-      
-    else
+    elsif (0..3).to_a.include? playHand
       puts "you lose..."
       casePattern = "pattern2"
+    
+    else
+      puts "ちゃんと選択肢から選べや"
     end
       
     case casePattern
@@ -48,14 +48,14 @@ class JankenFacingThat
       
       if playDirection == cpuDirection
         puts "you win!!"
-      elsif playDirection != (0..3).to_a
-        puts "ちゃんと選択肢から選べや"
-      else
+      elsif (0..3).to_a.include? playDirection
         puts "もう一回遊べるどん"
         puts "じゃんけん"
         janken
-      end
       
+      else
+        puts "ちゃんと選択肢から選べや"
+      end
     when "pattern2"
       puts "あっちむいて〜..."
       puts "0(上)1(右)2(下)3(左)"
@@ -70,12 +70,13 @@ class JankenFacingThat
       
       if playDirection == cpuDirection
         puts "you lose..."
-      elsif playDirection != (0..3).to_a
-        puts "ちゃんと選択肢から選べや"
-      else
+      elsif (0..3).to_a.include? playDirection
         puts "もう一回遊べるどん"
         puts "じゃんけん"
         janken
+      
+      else
+        puts "ちゃんと選択肢から選べや"
       end
     end
   end
