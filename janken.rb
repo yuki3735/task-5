@@ -70,7 +70,7 @@ class JankenFacingThat
       
       if playDirection == cpuDirection
         puts "you lose..."
-      elsif playDirection != [0,1,2,3]
+      elsif playDirection != (0..3).to_a
         puts "ちゃんと選択肢から選べや"
       else
         puts "もう一回遊べるどん"
